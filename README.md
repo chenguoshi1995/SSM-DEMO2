@@ -1,4 +1,4 @@
-# 使用SSM实现秒杀商品案例
+# SSM框架实现高速秒杀商品秒杀商品
 ## 实现功能
 
 - 秒杀接口暴露
@@ -184,7 +184,7 @@ public interface SeckillService {
 
 ## web层设计 
 
-- URL设计
+- URL设计 采用restful风格url
 
   `/模块/资源/{标示}/集合1/...`
 
@@ -344,6 +344,8 @@ handleSeckillkill:function(seckillId,node){
 ```
 
 ## 优化
+
+###使用CDN内容分发网络加速用户获取静态数据，将html页面、js函数的等放在CDN上，部署在离用户最近的网络节点上，因此不需要访问后端服务器，减轻后端服务器的压力
 
 ### 使用redis后端缓存
 
